@@ -112,6 +112,13 @@
             "2026-05-18 22:02:07 【国内出运】 货物已装载完毕，已发车去出境口岸",
             "2026-05-18 10:11:19 货物装载完毕，货物已从仓库发出",
             "2026-05-18 09:52:48 订单已创建"
+        ],
+        "PXM1002605152-1": [
+            "2026-05-27 10:01:53 Товары уже перезагружены - 货物已换装完成",
+            "2026-05-26 10:01:40 Груз прибыл на границу Китая - 货物抵达口岸，Ожидает смены транзитного вагона - 等待过境车换装",
+            "2026-05-19 15:02:10 货物装载完毕，货物已从仓库发出",
+            "2026-05-19 10:23:13 货物装载完毕，货物已从仓库发出",
+            "2026-05-19 10:05:46 订单已创建"
         ]
     };
     // ====================================================
@@ -136,14 +143,14 @@
                 [...logistics].reverse().forEach((item) => {
                     let time = '', content = item;
                     const timeMatch = item.match(/^(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})/);
-                    if (timeMatch) {
-                        time = timeMatch[1];
-                        content = item.substring(timeMatch[0].length).trim();
+                    如果 (时间匹配) {
+                        时间 = timeMatch[1];
+                        内容 = item.substring(timeMatch[0].length).trim();
                     }
                     timelineHtml += `
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
-                            ${time ? `<div class="timeline-date">${time}</div>` : ''}
+                            ${时间 ? `<div class="timeline-date">${时间}</div>` : ''}
                             <div class="timeline-content">${content}</div>
                         </div>
                     `;
@@ -159,9 +166,9 @@
         }, 300);
     }
 
-    document.getElementById('trackingInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') searchTracking();
+    文档.getElementById('trackingInput').addEventListener('keypress', 函数(e) {
+        如果 (e.键 === '回车') 搜索跟踪();
     });
-</script>
-</body>
-</html>
+</脚本>
+</身体>
+    </html>
