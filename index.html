@@ -22,7 +22,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             margin-bottom: 20px;
         }
-        .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        .search-box { display: flex; gap: 10px; margin-bottom: 0; }
         .search-box input {
             flex: 1;
             padding: 14px 16px;
@@ -96,9 +96,6 @@
         <div class="search-box">
             <input type="text" id="trackingInput" placeholder="请输入运单号" autocomplete="off" />
             <button onclick="searchTracking()">查询</button>
-        </div>
-        <div style="font-size: 12px; color: #718096; text-align: center;">
-            支持单号：PXU04260622、PXU161260623 和 PXT96260630-3
         </div>
     </div>
     <div id="result" class="result-card"></div>
