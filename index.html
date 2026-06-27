@@ -132,100 +132,16 @@
         ],
         // ===== 加运美（已去除品牌宣传语） =====
         "5549447480986151": [
-            "2026-06-26 17:26 您的快件已签收，签收人是拍照签收，如有疑问请联系收派            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .result-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            display: none;
-        }
-        .tracking-number {
-            background: #f7fafc;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .timeline { position: relative; padding-left: 30px; }
-        .timeline-item {
-            position: relative;
-            padding-bottom: 20px;
-            border-left: 2px solid #e2e8f0;
-            margin-left: 10px;
-            padding-left: 20px;
-        }
-        .timeline-item:last-child { border-left: 2px solid transparent; }
-        .timeline-dot {
-            position: absolute;
-            left: -33px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #cbd5e0;
-        }
-        .timeline-item:first-child .timeline-dot { background: #48bb78; }
-        .timeline-date { font-size: 12px; color: #718096; margin-bottom: 4px; }
-        .timeline-content { color: #2d3748; }
-        .error-message {
-            background: #fed7d7;
-            color: #c53030;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        footer { text-align: center; color: white; margin-top: 30px; font-size: 12px; }
-        .loading { text-align: center; padding: 20px; }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="logo">
-        <h1>📦 物流查询系统</h1>
-        <p>请输入您的运单号查询物流信息</p>
-    </div>
-    <div class="search-card">
-        <div class="search-box">
-            <input type="text" id="trackingInput" placeholder="请输入运单号" autocomplete="off" />
-            <button onclick="searchTracking()">查询</button>
-        </div>
-    </div>
-    <div id="result" class="result-card"></div>
-    <footer>如有疑问请联系客服</footer>
-</div>
-
-<script>
-    // 物流数据库
-    var logisticsDatabase = {
-        "PXU04260622": [
-            "2026-06-21 14:01:47 19公里 【已出境】 货物已出境 товары покинули Ки",
-            "2026-06-13 14:02:13 【运输中】 口岸已换装 груз уже перегрузи",
-            "2026-06-10 14:01:58 【抵达口岸】 货物已经到达出境口岸 Груз прибыл",
-            "2026-06-04 02:01:55 【国内出运】 货物已装载完毕，已发车去出境口岸 товар",
-            "2026-06-03 14:38:01 Груз погружен в транспортное с",
-            "2026-06-03 14:21:33 Оформление документов 订单已创建"
+            "2026-06-26 17:26 您的快件已签收，签收人是拍照签收，如有疑问请联系收派员蔡全添13229455977或派件站点18022843553，投诉电话4000033333",
+            "【广州市白云区】的蔡全添13229455977正在派送,如有问题可联系派件网点电话18022843553,投诉电话400 00 33333"
         ],
-        "PXU161260623": [
-            "2026-06-21 14:01:47 【已出境】 货物已出境 товары покинули Ки",
-            "2026-06-13 14:02:13 【运输中】 口岸已换装 груз уже перегрузи",
-            "2026-06-10 14:01:58 【抵达口岸】 货物已经到达出境口岸 Груз прибыл",
-            "2026-06-04 02:01:55 【国内出运】 货物已装载完毕，已发车去出境口岸 товар",
-            "2026-06-03 14:38:01 Груз погружен в транспортное с",
-            "2026-06-03 14:21:33 Оформление документов 订单已创建"
+        "5549722278583877": [
+            "您的快件已签收，签收人是拍照签收，如有疑问请联系收派员蔡全添13229455977或派件站点18022843553，投诉电话4000033333"
         ],
-        "PXT96260630-3": [
-            "2026-06-21 14:01:47 19公里 【已出境】 货物已出境 товары покинули Ки",
-            "2026-06-13 14:02:13 【运输中】 口岸已换装 груз уже перегрузи",
-            "2026-06-10 14:01:58 【抵达口岸】 货物已经到达出境口岸 Груз прибыл",
-            "2026-06-04 02:01:55 【国内出运】 货物已装载完毕，已发车去出境口岸 товар",
-            "2026-06-03 14:38:01 Груз погружен в транспортное с",
-            "2026-06-03 14:21:33 Оформление документов 订单已创建"
+        // ===== 其他 =====
+        "ZS601010": [
+            "2026-06-27 08:46 【广州市】快件已签收，物流更新及时通知到您的手机，还可为您预测到达时间通过App\"关注动态\"",
+            "【广州市】长红派件员:李勋平正在为您派件"
         ]
     };
 
@@ -251,7 +167,7 @@
                     var item = logistics[i];
                     var time = "";
                     var content = item;
-                    var timeMatch = item.match(/^(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2})/);
+                    var timeMatch = item.match(/^(\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2})/);
                     if (timeMatch) {
                         time = timeMatch[1];
                         content = item.substring(timeMatch[0].length).trim();
